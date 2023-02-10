@@ -1,0 +1,41 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Configuration for the default package. -->
+    <package name="default" namespace="/" extends="struts-default">
+        <action name="Login" class="com.exavalu.models.User" method="doLogin">
+            <result name="SUCCESS">employeeDetails.jsp</result>
+            <result name="FAILURE">login.jsp</result>
+        </action>
+        <action name="Signup" class="com.exavalu.models.User" method="doSignup">
+            <result name="SUCCESS">signup.jsp</result>
+            <result name="FAILURE">login.jsp</result>
+        </action>
+        <action name="PreSignup" class="com.exavalu.models.User" method="doPreSignup">
+            <result name="SUCCESS">signup.jsp</result>
+            <result name="INSERTED">login.jsp</result>
+        </action>
+        <action name="InsertEmployee" class="com.exavalu.models.Employee" method="insertEmp">
+            <result name="SUCCESS">insertemployee.jsp</result>
+            <result name="FAILURE">insertemployee.jsp</result>
+        </action>
+        <action name="EditEmployee" class="com.exavalu.models.Employee" method="doEdit">
+            <result name="SUCCESS">editemployee.jsp</result>
+            <result name="FAILURE">employeeDetails.jsp</result>
+        </action>
+        <action name="SaveEmployee" class="com.exavalu.models.Employee" method="doSave">
+            <result name="SUCCESS">employeeDetails.jsp</result>
+            <result name="FAILURE">editemployee.jsp</result>
+        </action>
+        <action name="Search" class="com.exavalu.models.Employee" method="doSearch">
+            <result name="SUCCESS">searchemployee.jsp</result>
+            <result name="FAILURE">employeeDetails.jsp</result>
+        </action>
+        <action name="Home" class="com.exavalu.models.Employee" method="getAllEmp">
+            <result name="SUCCESS">employeeDetails.jsp</result>
+            <result name="FAILURE">login.jsp</result>
+        </action>
+    </package>
+</struts>

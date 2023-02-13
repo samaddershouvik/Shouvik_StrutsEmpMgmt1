@@ -22,10 +22,7 @@
                     <li><a class="nav-link px-2 text-white" href="insertemployee.jsp">Add Employee</a></li>
                     <li><a class="nav-link px-2 text-white" href="Home">Show Employee</a></li>
                     <li><a class="nav-link px-2 text-white" href="searchemployee.jsp">Search Employee</a></li>
-                    <li><a class="nav-link px-2 text-white" href="#">Update Employee</a></li>
-                    <a href="Login2">
-                        <button type="button" class="btn btn-outline-light me-2" >API</button>
-                    </a>
+                    <li><a class="nav-link px-2 text-white" href="Login2">API Request</a></li>
                 </ul>
 
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">

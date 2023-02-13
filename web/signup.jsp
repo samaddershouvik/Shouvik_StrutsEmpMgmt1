@@ -29,11 +29,28 @@
         <!-- Custom styles for this template -->
         <link href="sign-in.css" rel="stylesheet">
     </head>
-    
-    <<script>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"
+        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+        ncrossorigin="anonymous">
+    </script>
+    <script>
         function submitForm()
         {
             signupForm.submit();
+        }
+        function fetchContent(selectedId, targetId) {
+        $("#" + selectedId.name).change(function () {
+            $.ajax({
+                url: 'PreSignUp',
+                data: {
+                    countryCode: $("#" + selectedId.name).val()
+                },
+                success: function (responseText) {
+                    //                        alert(responseText);
+                    $("#" + targetId.name).html(responseText);
+                }
+            });
+        });
         }
     </script>
     

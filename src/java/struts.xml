@@ -9,9 +9,13 @@
             <result name="SUCCESS">employeeDetails.jsp</result>
             <result name="FAILURE">login.jsp</result>
         </action>
-        <action name="Signup" class="com.exavalu.models.User" method="doSignup">
-            <result name="SUCCESS">signup.jsp</result>
+        <action name="Login2" class="com.exavalu.services.consume.ConsumeJson" method="fun">
+            <result name="SUCCESS">employeeDetails.jsp</result>
             <result name="FAILURE">login.jsp</result>
+        </action>
+        <action name="Signup" class="com.exavalu.models.User" method="doSignup">
+            <result name="SUCCESS">login.jsp</result>
+            <result name="FAILURE">signup.jsp</result>
         </action>
         <action name="PreSignup" class="com.exavalu.models.User" method="doPreSignup">
             <result name="SUCCESS">signup.jsp</result>

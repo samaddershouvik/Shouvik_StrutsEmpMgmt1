@@ -20,6 +20,8 @@
         <action name="PreSignup" class="com.exavalu.models.User" method="doPreSignup">
             <result name="SUCCESS">signup.jsp</result>
             <result name="INSERTED">login.jsp</result>
+            <result name="STATE">province.jsp</result>
+            <result name="DISTRICT">district.jsp</result>
         </action>
         <action name="InsertEmployee" class="com.exavalu.models.Employee" method="insertEmp">
             <result name="SUCCESS">insertemployee.jsp</result>

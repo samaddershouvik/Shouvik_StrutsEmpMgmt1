@@ -138,15 +138,19 @@ public class User extends ActionSupport implements ApplicationAware, SessionAwar
         ArrayList countryList = UserService.getCountries();
         sessionMap.put("CountList", countryList);
         if (this.countryCode != null) {
+            System.out.println("In state");
             ArrayList stateList = UserService.getState(this.countryCode);
             sessionMap.put("ProvinceList", stateList);
             sessionMap.put("emp", this);
+            result = "STATE";
         }
         if (this.countryCode != null && this.stateCode != null) {
+            System.out.println("In district");
             ArrayList districtList = UserService.getDistrict(this.stateCode);
             sessionMap.put("DistrictList", districtList);
             sessionMap.put("emp", this);
             System.out.println(this.districtCode);
+            result = "DISTRICT";
         }
         if(this.firstName != null && this.firstName.length()>0 && this.lastName != null && this.lastName.length()>0 && this.emailAddress != null && this.emailAddress.length()>0 && this.password!= null
                 && this.password.length()>0 && this.stateCode != null && this.stateCode.length()>0 && this.countryCode != null && this.countryCode.length()>0 && this.districtCode != null&& this.districtCode.length()>0){ 

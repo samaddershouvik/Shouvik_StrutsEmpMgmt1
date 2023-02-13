@@ -29,8 +29,7 @@
         <!-- Custom styles for this template -->
         <link href="sign-in.css" rel="stylesheet">
     </head>
-    <script src="https://code.jquery.com/jquery-3.6.3.js"
-        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous">
     </script>
     <script>
 //        function submitForm()
@@ -38,14 +37,14 @@
 //            signupForm.submit();
 //        }
         function fetchContent(selectedId, targetId) {
-            alert("'#" + selectedId+ "'");
+//            alert("'#" + selectedId+ "'");
             $.ajax({
                 url: 'PreSignup',
                 data: {
                     [selectedId]: $("#" + selectedId).val()
                 },
                 success: function (responseText) {
-                    alert(responseText);
+//                    alert(responseText);
                     $("#" + targetId).html(responseText);
                 }
             });
@@ -55,7 +54,7 @@
     <body class="text-center bg-dark">
         <jsp:include page="menu.jsp"></jsp:include>
         <main class="form-signin w-100 m-auto">
-            <form action="PreSignup" method="Post" id="signupForm">
+            <form action="Signup" method="Post" id="signupForm">
                 <img class="mb-4" src="images/flower-logo.jpg" alt="" width="200" height="200">
                 <h1 class="h3 mb-3 fw-normal">Enter details</h1>
 

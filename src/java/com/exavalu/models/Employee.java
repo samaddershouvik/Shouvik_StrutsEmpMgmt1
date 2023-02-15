@@ -62,7 +62,6 @@ public class Employee extends ActionSupport{
             System.out.println("returning Success from getAllEmp method");
             result = "SUCCESS";
             sessionMap.put("EmpList",empListnew);
-            
         } else {
             System.out.println("returning Failure from getAllEmp method");
         }
@@ -147,7 +146,7 @@ public class Employee extends ActionSupport{
         if(empListnew!=null)
             success = true;
         if (success) {
-            System.out.println("returning Success from doSave method");
+            System.out.println("returning Success from doSearch method");
             result = "SUCCESS";
             sessionMap.put("EmpList",empListnew);
             ArrayList deptList = DepartmentService.getAllDepartment();
@@ -159,6 +158,13 @@ public class Employee extends ActionSupport{
             System.out.println("returning Failure from doSave method");
         }
 
+        return result;
+    }
+    
+    public String doShow() throws Exception {
+        String result = "FAILURE";
+        if(sessionMap.get("EmpList")!=null)
+            result = "SUCCESS";
         return result;
     }
     

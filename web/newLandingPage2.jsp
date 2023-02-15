@@ -1,0 +1,1 @@
+<jsp:include page="bodyForLandingPage.jsp"></jsp:include>

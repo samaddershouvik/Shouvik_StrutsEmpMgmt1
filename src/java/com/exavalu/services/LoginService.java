@@ -11,13 +11,14 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import org.apache.log4j.Logger;
 
 /**
  *
  * @author Avijit Chattopadhyay
  */
 public class LoginService {
-    
+    static Logger log = Logger.getLogger(LoginService.class.getName());
     public static LoginService loginService = null;
     
     private LoginService(){}
@@ -57,6 +58,7 @@ public class LoginService {
             
         } catch (SQLException ex) {
             ex.printStackTrace();
+            log.error("Error in login sql statement "+ex);
         }
         
         

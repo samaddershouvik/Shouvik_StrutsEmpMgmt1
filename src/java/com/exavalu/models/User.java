@@ -14,6 +14,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Map;
+import org.apache.log4j.Logger;
 import org.apache.struts2.dispatcher.ApplicationMap;
 import org.apache.struts2.dispatcher.SessionMap;
 import org.apache.struts2.interceptor.ApplicationAware;
@@ -24,7 +25,7 @@ import org.apache.struts2.interceptor.SessionAware;
  * @author Admin
  */
 public class User extends ActionSupport implements ApplicationAware, SessionAware, Serializable {
-
+    static Logger log = Logger.getLogger(User.class.getName());
     private String emailAddress;
     private String password;
     private String firstName;
@@ -112,6 +113,7 @@ public class User extends ActionSupport implements ApplicationAware, SessionAwar
             
         } else {
             System.out.println("returning Failure from doLogin method");
+            log.error("Wrong User Data inputted");
         }
 
         return result;

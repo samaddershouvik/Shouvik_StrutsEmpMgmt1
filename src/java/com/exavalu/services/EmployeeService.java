@@ -12,13 +12,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import org.apache.log4j.Logger;
 
 /**
  *
  * @author Avijit Chattopadhyay
  */
 public class EmployeeService {
-    
+    static Logger log = Logger.getLogger(EmployeeService.class.getName());
     public static EmployeeService employeeService = null;
     
     public static EmployeeService getInstance()
@@ -66,6 +67,7 @@ public class EmployeeService {
         }
         catch (SQLException ex) {
             ex.printStackTrace();
+            log.error("Error in allEmp sql statement "+ex);
         }
         System.err.println("Total rows:"+empList.size());
         return empList;
@@ -103,6 +105,7 @@ public class EmployeeService {
 
         } catch (SQLException ex) {
             ex.printStackTrace();
+            log.error("Error in getEmp sql statement "+ex);
         }
         System.out.println(emp.getEmployeeId());
         return emp;
@@ -137,6 +140,7 @@ public class EmployeeService {
 
         } catch (SQLException ex) {
             ex.printStackTrace();
+            log.error("Error in editEmp sql statement "+ex);
         }
         return result;
     }
@@ -170,6 +174,7 @@ public class EmployeeService {
 
         } catch (SQLException ex) {
             ex.printStackTrace();
+            log.error("Error in updateEmp sql statement "+ex);
         }
         return result;
     }
@@ -203,7 +208,7 @@ public class EmployeeService {
         } catch (SQLException ex) {
 
             ex.printStackTrace();
-
+            log.error("Error in insertEmp sql statement "+ex);
         }
 
         return result;
@@ -251,6 +256,7 @@ public class EmployeeService {
 
         } catch (SQLException ex) {
             ex.printStackTrace();
+            log.error("Error in searchEmp sql statement "+ex);
         }
         System.out.println("Number of employees = " + empList.size());
         return empList;
